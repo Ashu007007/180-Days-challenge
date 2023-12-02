@@ -1,0 +1,23 @@
+Write a C++ program to take a user input and check if the number is Prime or not.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int i, num;
+    
+    bool prime = true;
+    cout << "Enter the Number: ";
+    cin >> num;
+    for(i=2; i<=num/2; i++){
+        if(num % i == 0){
+            prime = false;
+        }
+    }
+    if(prime){
+        cout << num <<" is Prime";
+    }
+    else{
+        cout << num << " is not Prime";
+    }
+}
