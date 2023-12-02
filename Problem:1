@@ -1,0 +1,30 @@
+/*Create an array that can hold ten integers, and get input from user. Display those values on the screen,
+and then prompt the user for an integer. Search through the array, and count the number of times the item is found.*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int i;
+    int arr[5];
+    int num;
+    int count = 0;
+    
+    cout<<"Enter the 5 numbers"<<endl;
+    for(i=1;i<6;i++){
+        cin >> arr[i];
+    }
+    for(i=1;i<6;i++){
+        cout << arr[i];
+    }
+    
+    cout << "\nEnter the num to find:" << endl;
+    cin >> num;
+    for(int i=1;i<6;i++){
+        if(num==arr[i]){
+            count+= 1;
+        }
+        
+}
+cout << count;
+}
