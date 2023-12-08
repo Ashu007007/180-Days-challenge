@@ -1,0 +1,46 @@
+Vector functions:
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    vector <int> v = {2,3,1,5,6};
+
+    vector <int> copy = {325, 177};
+
+    // 1. a x (Adds an element x to the vector A at the end )
+    v.emplace_back(5);
+    cout << v[5] << endl;
+
+    // 2. b (Sorts the vector A in ascending order )
+    sort(v.begin(),v.end());
+    for(auto it : v){
+        cout << it << " ";
+    }
+    cout << endl;
+
+    // 3. c (Reverses the vector A)
+    for(auto it=v.end()-1; it>=v.begin();it--){
+        cout << *it << " ";
+    }
+    cout << endl;
+
+    //4.d (prints the size of the vector)
+    cout << v.size() << endl;
+    
+    //5.Erase an element.
+    v.erase(v.begin()+1);
+     for(auto it : v){
+        cout << it << " ";
+    }
+    cout << endl;
+    
+    // 6. Insert element or elements or even another vector
+    v.insert(v.begin(), 2, 100);
+    v.insert(v.begin()+2,5,20);
+    v.insert(v.end(),copy.begin(),copy.end());
+    for(auto it : v){
+        cout << it << " ";
+    }
+    cout << endl;
+}
