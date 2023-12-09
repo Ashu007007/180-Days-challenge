@@ -1,0 +1,99 @@
+Maps:
+
+To declare a map in C++, we use the following syntax:
+
+map <key_dataType, value_dataType> mapName;
+
+
+
+Map to store the roll numbers corresponding to the names of every student in the class.
+
+#include <iostream>
+// To use the map data structure
+#include <map>
+
+using namespace std;
+
+int main ()
+{
+    // Create a map with strings as the key and the integer type as the values
+    // Names of the students will be of the data type string and the roll numbers as the integer types
+    map<string, int> mp;
+
+    // Assign values to the map
+
+    mp["Asia"] = 1; // Inserts key = "Asia" with value = 1
+    mp["Europe"] = 2; // Inserts key = "Europe" with value = 2
+    mp["Australia"] = 3; // Inserts key = "Australia" with value = 3
+    mp["Antarctica"] = 4 ; // Inserts key = "Antarctica" with value = 4
+
+    // We can retrieve the roll number or the values corresponding to the keys quickly without going through the whole array
+
+    cout << "The roll number of Antarctica is: " << mp["Antarctica"] << endl;
+    cout << "The roll number of Europe is: " << mp["Europe"] << endl;
+
+    return 0;
+}
+
+
+
+
+Output:
+
+The roll number of Antarctica is: 4
+The roll number of Europe is: 2
+
+
+===============================================================================================================
+
+Program to understand map functions:
+
+#include <iostream>
+#include <map>
+
+using namespace std;
+
+int main ()
+{
+    // Creating a map
+    map<int, int> mp;
+
+    // Check if the map is empty or not
+    if (mp.empty())
+        cout << "The map is empty" << endl;
+    else
+        cout << "The map is not empty" << endl;
+
+    // Find the size of the map
+    cout << "The size of the map is: " << mp.size() << endl;
+
+    // Assigning values to the keys
+    mp[1] = 14;
+    mp[2] = 45;
+    mp[3] = 69;
+    mp[4] = 25;
+
+    // Check if the map is empty or not
+    if (mp.empty())
+        cout << "The map is empty" << endl;
+    else
+        cout << "The map is not empty" << endl;
+
+    // Find the size of the map
+    cout << "The size of the map is: " << mp.size() << endl;
+
+    // Find the maximum size of the map that is possible
+    cout << "The max size of the map is: " << mp.max_size() << endl;
+
+    return 0;
+}
+
+
+
+Output:
+
+The map is empty
+The size of the map is: 0
+The map is not empty
+The size of the map is: 4
+The max size of the map is: 230584300921369395
