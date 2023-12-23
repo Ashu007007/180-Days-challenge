@@ -1,0 +1,21 @@
+Math Problem series with solution.
+
+
+Question link
+https://www.codingninjas.com/studio/problems/count-digits_8416387
+
+Solution:
+
+int countDigits(int n){
+	int count = 0;
+	int temp = n;
+	while(temp != 0) {
+		int last_dig = temp % 10;
+		temp = temp / 10;
+		if(last_dig > 0 && n % last_dig == 0)
+			count = count + 1;
+	}
+	return count;
+}
+
+======================================================================================================================================================================
