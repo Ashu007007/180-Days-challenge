@@ -19,3 +19,27 @@ int countDigits(int n){
 }
 
 ======================================================================================================================================================================
+
+Question link
+https://www.codingninjas.com/studio/problems/reverse-of-a-number_624652
+
+Solution:
+
+#include<iostream>
+using namespace std;
+
+int main() {
+int n;
+cin >> n;
+int rev = 0;
+int last_dig;
+while(n > 0){
+	last_dig = n % 10;
+	rev = (rev * 10) + last_dig;
+	n = n/10;
+		
+}
+cout << rev;
+
+}
+==================================================================================================================================================================
