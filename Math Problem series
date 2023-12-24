@@ -89,3 +89,20 @@ bool checkArmstrong(int n){
 	}
 }
 ======================================================================================================================================================
+Sum of all divisors:
+https://www.codingninjas.com/studio/problems/sum-of-all-divisors_8360720
+
+Solution:
+
+int sumOfAllDivisors(int n){
+    
+	  int sum=0;
+
+    for(int i=1; i<=n; i++){
+
+        sum+=int(n/i)*i;
+    }   
+    return sum;
+}
+
+=============================================================================================================================
