@@ -127,3 +127,19 @@ bool isPrime(int n)
 		else return false;
 }
 ========================================================================================================================
+GCD or HCF:
+https://www.codingninjas.com/studio/problems/hcf-and-lcm_840448
+
+Solution:
+
+int calcGCD(int n, int m){
+    int gcd = 1;
+    for(int i=1; i<=min(n,m); i++){
+        if(n%i==0 && m%i==0){
+            gcd = i;
+        }
+    }
+    return gcd;
+}
+
+=========================================================================================================================
