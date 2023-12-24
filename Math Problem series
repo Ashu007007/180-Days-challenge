@@ -66,3 +66,26 @@ bool palindrome(int n)
 }
 
 ============================================================================================================================
+Check Armstrong:
+https://www.codingninjas.com/studio/problems/check-armstrong_589
+
+Solution:
+
+#include<math.h>
+bool checkArmstrong(int n){
+	int temp = n;
+//example: log10(371) = (2.569) + 1 = since integer .569 is ignored so the lendgth can be determined as '3'.
+	int len = (log10(n) + 1);
+	int rev = 0;
+	while(n > 0){
+		int ld = n %10;
+		rev = rev +pow(double (ld), double (len));
+		n = n/10;
+	}
+	if(temp == rev){
+		return true;
+	}else{
+		return false;
+	}
+}
+======================================================================================================================================================
