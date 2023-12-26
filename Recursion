@@ -1,0 +1,18 @@
+Print N times using recursion:
+https://www.codingninjas.com/studio/problems/-print-n-times_8380707
+
+Solution:
+
+vector<string> printNTimes(int n) {
+
+    if(n==0)
+    {
+        return{};
+    }
+        vector<string>v = printNTimes(n-1);
+        v.push_back("Coding Ninjas");
+        return v;
+}
+
+===========================================================================================================================================================================
+
