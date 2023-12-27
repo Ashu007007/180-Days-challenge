@@ -143,3 +143,22 @@ int calcGCD(int n, int m){
 }
 
 =========================================================================================================================
+ Factorial Numbers Not Greater Than N:
+
+https://www.codingninjas.com/studio/problems/factorial-numbers-not-greater-than-n_8365435
+
+Solution:
+
+vector<long long> factorialNumbers(long long n) {
+   vector <long long> v;
+    long long fact = 1;
+    for(int i=1; fact*i<=n; i++){
+        fact = fact * i;
+        v.push_back(fact);
+        
+
+    }
+  return v;
+}
+
+=========================================================================================================================
