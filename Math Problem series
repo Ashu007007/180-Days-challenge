@@ -162,3 +162,27 @@ vector<long long> factorialNumbers(long long n) {
 }
 
 =========================================================================================================================
+Reverse an array from a particular position:
+
+https://www.codingninjas.com/studio/problems/reverse-the-array_1262298
+
+Solution: 
+
+void reverseArray(vector<int> &arr , int m){
+
+    int s = m+1;
+    //m+1 as the reversing needs to be done after the given position 'm'.
+    int sz = arr.size()-1;
+    //so that the position should never go over the size of the array.
+   while(s<=sz){
+     //here the swalp will assign the value of last element with m+1 element.
+     swap(arr[s],arr[sz]);
+     //potion itrator will move forward after swalpping the value.
+     s++;
+ //the size iteratoe will move in opposite direction before the while condition is met.
+     sz--;
+
+   }
+
+}
+========================================================================================================================
