@@ -51,3 +51,35 @@ vector<int> printNos(int x) {
     
 }
 ======================================================================================================================================================================
+ Reverse an Array:
+https://www.codingninjas.com/studio/problems/reverse-an-array_8365444
+
+Solution:
+
+void ans(int s,int e, vector<int> &nums)
+
+{
+
+    if(s>e) return ;//base case //  stopping case
+
+    swap(nums[s],nums[e]);//recursive function
+
+    ans(s+1, e-1 ,nums);
+
+}
+
+vector<int> reverseArray(int n, vector<int> nums)
+
+{
+
+    int s =0;//start index
+
+    int e =nums.size()-1;//end index
+
+    ans(s,e,nums);
+
+    return nums;
+
+}
+
+==========================================================================================================================
