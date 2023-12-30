@@ -103,3 +103,27 @@ bool isPalindrome(string& str) {
     pal(i,n, str);
  
 }
+===================================================================================================================================================================
+
+Nth Fibonacci Number (Recursion):
+
+https://www.codingninjas.com/studio/problems/nth-fibonacci-number_74156
+
+Solution:
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void fib(int n){
+if(n==0 || n==1){
+return n;
+} else {
+return fib(n-1)+fib(n-2);
+    }
+}
+
+int main(){
+int n;
+cin>>n;
+cout << fib(n);
+}
