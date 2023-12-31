@@ -127,3 +127,66 @@ int n;
 cin>>n;
 cout << fib(n);
 }
+
+=====================================================================================================================================================================
+
+Pascals triangle:
+
+https://www.codingninjas.com/studio/problems/pascal-s-triangle_1089580
+
+Solutions:
+
+#include <bits/stdc++.h>
+vector<long long int> ans(int rows){
+ vector<long long int> ds;
+  long long temp = 1;
+  ds.push_back(1);
+  for(int i=1;i<rows;i++)
+  {
+      temp*=(rows-i);
+
+      temp/=i;
+
+      ds.push_back(temp);
+  }
+  return ds;
+}
+
+vector<vector<long long int>> printPascal(int n) 
+{
+  
+  vector<vector<long long int>> v;
+  for(int i=1;i<=n;i++)
+  v.push_back(ans(i));
+
+  return v;
+  
+  
+}
+
+====================================================
+
+if asked to print a pascals triangle in a simple way:
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int n;
+  cin>>n;
+  int temp = 1;
+  cout << 1;
+  for(int i=1;i<=n;i++){
+      for(int j=1;j<i;j++){
+          if(j==1){
+              cout << 1;
+          }
+          temp = temp*(i-j);
+          temp = temp/j;
+          cout << temp << " ";
+      }
+      cout << endl;
+  }
+}
+
+=========================================================================================================================================================================
