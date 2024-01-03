@@ -13,3 +13,42 @@ vector<int> countFrequency(int n, int x, vector<int> &nums){
       
 }
 ==========================================================================================================================================================================
+Highest / Lowest Frequency Elements:
+
+https://www.codingninjas.com/studio/problems/k-most-occurrent-numbers_625382
+
+Solution:
+
+vector<int> getFrequencies(vector<int>& v) {
+   
+   int n = v.size();
+    map<int, int> mpp;
+    for(int i=0; i<n;i++){
+        mpp[v[i]]++;
+    }
+    int maxele = 0;
+    int maxfrq = 0;
+    int minele = 0;
+    int minfrq = n;
+
+    for(auto it:mpp){                    //traversing through the mapp
+     int element = it.first;   
+     int count = it.second;          
+        
+    
+    if(count>maxfrq){
+        maxfrq = count;
+        maxele = element;
+    }
+    
+    if(count<minfrq){
+        minfrq = count;
+        minele = element;
+    }
+    
+    }
+    vector <int> ans;
+    ans.push_back(maxele);
+    ans.push_back(minele);
+    return ans;
+}
