@@ -29,7 +29,7 @@ vector<int> getFrequencies(vector<int>& v) {
     int maxele = 0;
     int maxfrq = 0;
     int minele = 0;
-    int minfrq = n;
+    int minfrq = n;                    //this is n so that at some point maxfrq is also under minfrq and only after that you can identify the real minfrq
 
     for(auto it:mpp){                    //traversing through the mapp
      int element = it.first;   
@@ -41,7 +41,7 @@ vector<int> getFrequencies(vector<int>& v) {
         maxele = element;
     }
     
-    if(count<minfrq){
+    if(count<minfrq){                    
         minfrq = count;
         minele = element;
     }
