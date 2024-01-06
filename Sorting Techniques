@@ -156,3 +156,39 @@ void mergeSort(vector<int> &arr, int l, int r){
     
 }
 ==========================================================================================================================================================================
+
+Quick Sort:
+
+https://www.codingninjas.com/studio/problems/quick-sort_5844
+
+Soltion:
+
+int partitionArray(int input[], int start, int end) {
+	int pvt = input[start];
+	int i = start;
+	int j = end;
+	while(i<j){
+		while(input[i]<=pvt && i<=end-1){
+			i++;
+		}
+
+		while(input[j]>pvt && j>=start+1){
+			j--;
+		}
+		if(i<j){
+			swap(input[i], input[j]);
+		}
+	}
+	swap(input[start], input[j]);
+	return j;
+}
+
+void quickSort(int input[], int start, int end) {
+	if(start<end){
+		int part = partitionArray(input, start, end);
+		quickSort(input,start, part-1);
+		quickSort(input,part+1,end);
+	}
+}
+
+=========================================================================================================================
