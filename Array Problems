@@ -14,3 +14,16 @@ int isSorted(int n, vector<int> a){
 }
 
 ============================================================================================================================================================================
+Largest Element in the array:
+
+https://www.codingninjas.com/studio/problems/largest-element-in-the-array-largest-element-in-the-array_5026279
+
+Solution:
+
+#include <bits/stdc++.h> 
+int largestElement(vector<int> &arr, int n) {
+   auto it = max_element(arr.begin(), arr.end());
+    return *it;
+}
+
+=============================================================================================================================
