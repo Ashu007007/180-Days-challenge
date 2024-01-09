@@ -83,3 +83,35 @@ for(int j =1;j<n;j++){
 return i+1;
 }
 ===========================================================================================================================
+Left rotate and array by one position:
+
+https://www.codingninjas.com/studio/problems/left-rotate-an-array-by-one_5026278
+
+#include <bits/stdc++.h> 
+vector<int> rotateArray(vector<int>& arr, int n) {
+   int temp = arr[0];
+   for(int i =1;i<n;i++){
+       arr[i-1]=arr[i];
+       
+   }
+   arr[n-1] = temp;
+   return arr;
+}
+===========================================================================================================================
+
+Rotate an array by K position:
+
+https://www.codingninjas.com/studio/problems/rotate-array_1230543
+
+Solution:
+
+vector<int> rotateArray(vector <int> &arr, int k){
+int n = arr.size();
+vector <int> temp(n);
+for(int i=0;i<n;i++){
+temp[i] = arr[(i+k)%n];
+}
+return temp;
+}
+
+===========================================================================================================================
