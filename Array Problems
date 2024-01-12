@@ -228,5 +228,72 @@ vector < int > sortedArray(vector < int > a, vector < int > b) {
        return temp;
    }
 =============================================================================================================================
+Find the single element:
 
+https://www.codingninjas.com/studio/problems/find-the-single-element_6680465
+
+Solution:
+
+BRUTE FORCE 
+
+#include<vector>
+
+ 
+
+int getSingleElement(vector<int> &arr){
+// Write your code here.
+int n =arr.size();
+for(int i=0;i<n;i++){
+	int num=arr[i];
+	int count=0;
+		for(int j=0;j<n;j++){
+			if(arr[j]==num){
+			count++;
+			}
+		}
+	if (count == 1) {
+	return num;
+	}
+}
+return 0;
+}
+
+***********************************************************USING HASHMAP********************************************************
+#include<vector>
+int getSingleElement(vector<int> &arr){
+// Write your code here.
+unordered_map<long, int> countMap;
+// Count occurrences using unordered_map
+for (int i = 0; i < arr.size(); i++) {
+countMap[arr[i]]++;
+}
+// Find the first element with count equal to 1
+for (int i = 0; i < arr.size(); i++) {
+if (countMap[arr[i]] == 1) {
+return arr[i];
+}
+}
+
+// Return a default or special value if no such element is found
+return -1;
+}
+
+*************************************************************BIT MANIPULATION:*************************************************
+
+#include<vector>
+int getSingleElement(vector<int> &arr){
+
+// Write your code here.
+
+int XOR=0;
+
+for(int i=0;i<arr.size();i++){
+
+XOR = XOR^arr[i];
+
+}
+
+return XOR;
+
+}
 ==========================================================================================================================
