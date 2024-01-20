@@ -464,3 +464,27 @@ vector<int> alternateNumbers(vector<int>&a) {
 }
 
 ==========================================================================================================================
+Longest Successive ELement:
+
+https://www.codingninjas.com/studio/problems/longest-successive-elements_6811740
+
+Solution:
+
+int longestSuccessiveElements(vector<int>&a) {
+int n=a.size();
+int length =1;
+int count=1;
+sort(a.begin(),a.end());
+for(int i=0;i<n-1;i++){
+	if (a[i] != a[i + 1]) {
+	if(a[i]+1==a[i+1]){
+	count++;
+	} else {
+	count = 1;
+	}
+length = max(length, count);
+	}
+}
+return length;
+}
+==========================================================================================================================
