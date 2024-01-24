@@ -26,3 +26,37 @@ vector<vector<int>> zeroMatrix(vector<vector<int>> &matrix, int n, int m) {
 	}
 return matrix;
 }
+
+==========================================================================================================================================================================
+
+Rotate the matrix:
+
+https://www.codingninjas.com/studio/problems/rotate-the-matrix_6825090
+
+Solution:
+
+#include<vector>
+void rotateMatrix(vector<vector<int>> &mat){
+    int n = mat.size();
+    // transposing the matrix
+    for(int i=0; i<n; i++){
+        for(int j=i+1; j<n; j++){
+            int temp = mat[i][j];
+            mat[i][j] = mat[j][i];
+            mat[j][i] = temp;
+        }
+    }
+    // reversing the rows in matrix;
+    int i=0;
+    while(i<n){
+        int k=0, l=n-1;
+        while(k<=l){
+            int temp = mat[i][k];
+            mat[i][k] = mat[i][l];
+            mat[i][l] = temp;
+            k++;
+            l--;
+        }
+        i++;
+    }
+}
