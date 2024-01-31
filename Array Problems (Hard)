@@ -33,3 +33,32 @@ vector<vector<int>> triplet(int n, vector<int> &arr)
     }
     return ans;
 }
+==============================================================================================================================================================================
+
+Majority Element (n/3):
+
+https://www.codingninjas.com/studio/problems/majority-element_6915220
+
+Solution:
+
+vector<int> majorityElement(vector<int> v) {
+	
+	int n = v.size();
+	int mj = n/3;
+	if(n==1){
+		return v;
+	}
+	map<int,int> mpp;
+	for(int i=0;i<n;i++){
+		mpp[v[i]]++;
+	}
+	vector<int> ans;
+	for(auto it:mpp){
+		if(it.second>mj){
+			ans.push_back(it.first);
+		}
+	}
+	return ans;
+}
+
+===========================================================================================================================================================================
