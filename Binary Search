@@ -1,3 +1,29 @@
+Binary Search:
+
+https://www.codingninjas.com/studio/problems/binary-search_972
+
+Solution:
+
+int search(vector<int> &nums, int target) {
+    int n = nums.size();
+    int low = 0;
+    int high = n-1;
+    while(low<=high){
+        int mid = (low+high)/2;
+        if(nums[mid]==target){
+            return mid;
+        }
+        else if(nums[mid]>target){
+            high = mid-1;
+
+        }
+        else{
+            low = mid+1;
+        }
+    }
+    return -1;
+}
+============================================================================================================================
 Find peak element:
 
 https://www.codingninjas.com/studio/problems/find-peak-element_1081482
@@ -36,3 +62,4 @@ int findPeakElement(vector<int> &arr) {
         return start;
 
 }
+============================================================================================================================
