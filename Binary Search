@@ -119,3 +119,27 @@ int singleNonDuplicate(vector<int>& arr)
     }
    return -1;
 }
+
+===========================================================================================================================
+Find minimum in rotated sorted array:
+
+https://www.codingninjas.com/studio/problems/rotated-array_1093219
+
+Solution:
+int findMin(vector<int>& arr)
+{
+	int s=0;
+    int e=arr.size()-1;
+    while(s<e){
+        int mid=s+(e-s)/2;
+        if(arr[mid]>arr[e]){
+            s=mid+1;
+        }
+        else{
+            e=mid;
+        }
+        mid=s+(e-s)/2;
+    }
+    return arr[s];
+}
+===========================================================================================================================
