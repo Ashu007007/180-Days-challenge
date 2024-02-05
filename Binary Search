@@ -143,3 +143,23 @@ int findMin(vector<int>& arr)
     return arr[s];
 }
 ===========================================================================================================================
+Rotation:
+
+https://www.codingninjas.com/studio/problems/rotation_7449070
+
+Solution:
+#include<bits/stdc++.h>
+int findKRotation(vector<int> &arr){
+    int start=0,n=arr.size();
+    int end=n-1;
+    while(start<end)
+    {
+        int mid=start+(end-start)/2;
+        if(arr[end]<arr[mid])
+        start=mid+1;
+        else 
+        end=mid;
+    }   
+    return start%n;
+}
+===========================================================================================================================
