@@ -1,0 +1,30 @@
+Square root if a number (log(n)):
+
+https://www.codingninjas.com/studio/problems/square-root-integral_893351
+
+Solution:
+int floorSqrt(int n)
+{
+    int low=1,high=n;
+    int ans=1;
+    while(low<=high)
+    {
+        //To avoid overflow
+        long long mid = low+(high-low)/2;
+        
+        if(mid*mid == n)
+        {
+            return mid;
+        }
+        if(mid*mid<=n)
+        {
+            ans=mid;
+            low=mid+1;
+        }
+        else
+        {
+            high=mid-1;
+        }
+    }
+    return high;
+}
