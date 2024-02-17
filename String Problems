@@ -32,3 +32,37 @@ bool isAnagram(string str1, string str2)
 }
 
 ==========================================================================================================================================================================
+Isomorphic Strings:
+
+https://www.codingninjas.com/studio/problems/isomorphic-strings-_1117636
+
+Solution:
+bool areIsomorphic(string &str1, string &str2)
+
+{
+
+
+    if (str1.size() != str2.size()) return 0;
+
+    int fr1[26] = {0,};
+
+    int fr2[26] = {0,};
+
+    for (int i=0; i<str1.size(); i++){
+
+        int t = str2[i]-'a', tt = str1[i]-'a';
+
+        if (fr1[t] == 0) fr1[t] = tt;
+
+        else if (fr1[t] != tt)   return 0;
+
+        if (fr2[tt] == 0) fr2[tt] = t;
+
+        else if (fr2[tt] != t)   return 0;  
+
+    }
+
+    return 1;
+
+}
+
