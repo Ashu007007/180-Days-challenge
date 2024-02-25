@@ -145,3 +145,34 @@ for(int i=0 ; i<n ; i++){
 }
 return ans;
 }
+===========================================================================================================================
+Count With K Different Characters
+
+https://www.codingninjas.com/studio/problems/count-with-k-different-characters_1214627
+
+Solution:
+int f(string &s,int k){
+    int i=0,j=0,n=s.size(),d=0,ans=0;
+    vector<int>v(26,0);
+    while(j<n){
+        int idx=s[j]-'a';
+        v[idx]++;
+        if(v[idx]==1){
+            d++;
+        }
+        while(d>k){
+            v[s[i]-'a']--;
+            if(v[s[i]-'a']==0){
+                d--;
+            }
+            i++;
+        }
+        ans+=j-i+1;
+        j++;
+    }
+    return ans;
+}
+int countSubStrings(string str, int k) 
+{
+    return f(str,k)-f(str,k-1);
+}
