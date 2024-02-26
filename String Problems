@@ -176,3 +176,46 @@ int countSubStrings(string str, int k)
 {
     return f(str,k)-f(str,k-1);
 }
+===========================================================================================================================
+ Implement Atoi Function
+
+https://www.codingninjas.com/studio/problems/implement-atoi-function_981270
+
+Solution:
+int createAtoi(string s) {
+    int val =0;
+    int i=0, len= s.length();
+    bool positive= true;
+    while(i<len){
+        while(i<len && s[i]==' '){
+            i++;
+        }
+        if(i<len && s[i]=='-'){
+            positive=false;
+            i++;
+        }
+        else if(i<len && s[i]=='+'){
+            i++;
+        }
+        while(i<len && s[i]-'0'>=0 && s[i]-'0'<=9){
+            
+            if(!positive  ){
+                if(-val<= INT_MIN/  10)
+                return INT_MIN;
+                else{
+                    val = val * 10 + s[i]-'0'; 
+                }
+            }
+            else{
+                if(val >= INT_MAX/10){
+                    return INT_MAX;
+                }
+                val = val* 10 + s[i]-'0';
+            }
+            i++;
+        }
+        break;
+    }
+    if(!positive) return -val;
+    return val;
+}
