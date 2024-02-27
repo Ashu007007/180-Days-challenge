@@ -219,3 +219,50 @@ int createAtoi(string s) {
     if(!positive) return -val;
     return val;
 }
+============================================================================================================================
+Roman Numeral To Integer:
+
+https://www.codingninjas.com/studio/problems/roman-numeral-to-integer_981308
+
+Solution:
+int romanToInt(string s) {
+
+  // Write your code here
+
+  unordered_map<char, int> romanCon;
+
+  romanCon.insert({'I', 1});
+
+  romanCon.insert({'V', 5});
+
+  romanCon.insert({'X', 10});
+
+  romanCon.insert({'L', 50});
+
+  romanCon.insert({'C', 100});
+
+  romanCon.insert({'D', 500});
+
+  romanCon.insert({'M', 1000});
+
+ 
+
+  int ans = 0;
+
+  int n = s.size();
+
+  for (int i = 0; i < n; i++) {
+
+    if (i < n - 1 && romanCon[s[i]] < romanCon[s[i + 1]])
+
+      ans -= romanCon[s[i]];
+
+    else
+
+      ans += romanCon[s[i]];
+
+  }
+
+  return ans;
+
+}
