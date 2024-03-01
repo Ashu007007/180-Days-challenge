@@ -25,3 +25,30 @@ Node* insertAtFirst(Node* list, int newValue) {
   //  mover->next=list;
   return mover;
 }
+============================================================================================================================
+
+Node *deleteLast(Node *list){
+
+   
+
+     Node*move = list;
+
+ 
+
+    while((move->next->next)!=nullptr){
+
+ 
+
+        move = move->next;
+
+ 
+
+     }
+
+     move->next= nullptr;
+
+ 
+
+   return list; 
+
+}
