@@ -52,3 +52,36 @@ Node *deleteLast(Node *list){
    return list; 
 
 }
+===========================================================================================================================
+count nodes of linked list:
+
+https://www.codingninjas.com/studio/problems/count-nodes-of-linked-list_5884
+
+Solution:
+int length(Node *head)
+
+{
+
+    //Write your code here
+
+       
+
+        int len = 1;
+
+ 
+
+        Node *temp = head;
+
+ 
+
+        while (temp->next != nullptr){
+
+            temp=temp->next;
+
+            len++;
+
+        }
+
+        return len;
+
+}
