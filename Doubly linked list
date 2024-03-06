@@ -10,3 +10,32 @@ Node* constructDLL(vector<int>& arr) {
     }
     return head;
 }
+==============================================================================================================================
+
+Node * insertAtTail(Node *head, int k) {
+
+    Node* temp=head;
+
+    Node* newnode=new Node(k,NULL,NULL);
+
+    if(head==nullptr){
+
+        head=newnode;
+
+    }
+
+    else{
+
+        while (temp->next != nullptr) {
+
+          temp = temp->next;
+
+        }
+
+        temp->next = new Node(k, temp, NULL);
+
+    }
+
+    return head;
+
+}
